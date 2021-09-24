@@ -6,16 +6,18 @@
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    <div class="flexbox-container">
+    <div class="mainGameContainer">
       <p>Mine Me Deep</p>
       <p id="goldMined">0 Gold Mined</p>
       <button onclick="mineGold()">Dig Deeper</button>
       <button onclick="buyGoldPerClick()" id ="perClickUpgrade">Upgrade Digger (Currently Level 1) Cost: 10 Gold</button>
       <button onclick="buyAutoDig()" id ="autoDigUpgrade">Upgrade Auto-Digger (Currently Level 1) Cost: 5 Gold</button>
     </div>
-    <button onclick="saveGameState()" id="saveInLocalStorage">Save Game State (last saved at Digger Level: 1)</button>
-    <button onclick="loadGameData()" id="loadFromLocalStorage">Load Game Data</button>
-    <button onclick="clearSaveData()" id="clearLocalStorage">Clear Save Game from cache</button>
+    <div class="saveDataContainer">
+      <div><button onclick="loadGameData()" id="loadFromLocalStorage">Load Game Data From Previous Game</button></div>
+      <div><button onclick="saveGameState()" id="saveInLocalStorage">Save Game State (last saved at Digger Level: 1)</button></div>
+      <div><button onclick="clearSaveData()" id="clearLocalStorage">Clear Save Game from cache</button></div>
+    </div>
     <script src="main.js" charset="utf-8" type="text/javascript"></script>
   </body>
 </html>

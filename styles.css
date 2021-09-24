@@ -11,10 +11,24 @@ button {
   padding: 5px;
 }
 
-.flexbox-container {
+.mainGameContainer {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   height: 600px
+}
+
+.saveDataContainer {
+  display: flex;
+  gap: 250px;
+  padding: 0px 100px 0px 100px;
+  flex-direction: row;
+  justify-content: center;
+  height: 100px;
+}
+
+.saveDataContainer div {
+  width: 15%;
+  align-self: center;
 }
