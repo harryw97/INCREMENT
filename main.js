@@ -1,3 +1,5 @@
+var saveGame = JSON.parse(localStorage.getItem('goldMinerSave'))
+
 var gameData = {
   gold: 0,
   goldPerClick: 1,
@@ -34,16 +36,26 @@ function buyAutoDig() {
   }
 }
 
+function clearSaveData() {
+  localStorage.removeItem('goldMinerSave')
+}
+
+function saveGameState() {
+  localStorage.setItem('goldMinerSave', JSON.stringify(gameData))
+  document.getElementById("saveInLocalStorage").innerHTML = "Save Game State (last saved at Digger Level: " + gameData.goldPerClick +")"
+}
+
+function loadGameData() {
+  saveGame
+  if (saveGame !== null) {
+    gameData = saveGame
+  }
+  document.getElementById("goldMined").innerHTML = gameData.gold + " Gold Mined"
+  document.getElementById("perClickUpgrade").innerHTML = "Upgrade Digger (Currently Level " + gameData.goldPerClick + ") Cost: " + gameData.goldPerClickCost + " Gold"
+  document.getElementById("autoDigUpgrade").innerHTML = "Upgrade Auto-Digger (Currently Level " + gameData.autoDigLevel + ") Cost: " + gameData.autoDigCost + " Gold"
+  document.getElementById("saveInLocalStorage").innerHTML = "Save Game State (last saved at Digger Level: " + gameData.goldPerClick +")"
+}
+
 var mainGameLoop = window.setInterval(function() {
   mineGold()
 }, gameData.autoDig)
-
-
-var saveGame = JSON.parse(localStorage.getItem('goldMinerSave'))
-if (saveGame != null) {
-  gameData = savegame
-}
-
-var saveGameLoop = window.setInterval(function() {
-  localStorage.setItem('goldMinerSave', JSON.stringify(gameData))
-}, 15000)
