@@ -4,7 +4,9 @@ body {
 }
 
 button {
-  background-color: grey
+  background-color: #e67300;
+  text-shadow: 1px 1px black;
+  color: white;
 }
 
 .flexbox-container {
