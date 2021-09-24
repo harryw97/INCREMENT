@@ -1,7 +1,10 @@
 body {
+  background-color: #000033;
+  color: white;
+}
+
+.flexbox-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #000033;
-  color: white;
 }
